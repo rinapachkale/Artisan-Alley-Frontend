@@ -1,38 +1,67 @@
 .App {
-  text-align: center;
+  position: relative; /* Allows children to be positioned relative to this */
+  text-align: center; /* Centers all text */
+  font-family: "Arial", sans-serif; /* Sets font style */
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Prevents scrolling if content overflows */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background-image {
+  background-image: url("./Artisan_Alley-Background.jpg"); /* Background succulent image */
+  background-size: cover; /* Makes the image cover the full container */
+  background-position: center; /* Centers the background image */
+  position: absolute; /* Positions image over full screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Makes it span the entire screen */
+  opacity: 0.7; /* 50% visibility to de-emphasize */
+  z-index: -1; /* Puts it behind the content */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content-container {
+  position: relative; /* Ensures content is positioned above the background */
+  z-index: 1; /* Places content on top of background */
+  color: black; /* Black text color */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-container {
+  margin: 100px 50px 50px 50px; /* 100px on top, 50 on left, and right, bottom margin () */
+  color: black; /* Black text color */
 }
 
-.App-link {
-  color: #61dafb;
+.header-container h1 {
+  font-family: "Amatic SC"; /* Cursive font for the header */
+  font-size: 3rem; /* Medium-large text size */
+  margin-bottom: 0.5rem; /* Adds space below the header */
+  text-align: left; /* Aligns text to the left */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-container h2 {
+  font-family: "Playfair Display", serif; /* Stylish font for subheading */
+  font-size: 5rem; /* Large text for the subheading */
+  margin-bottom: 5rem; /* Adds space below the subheading */
+  color: black; /* Ensures subheading is black */
+}
+
+.header-container p {
+  font-size: 1.2rem; /* Sets a readable paragraph size */
+  color: rgb(12, 12, 8); /* Dark grey text color */
+  margin-bottom: 4rem; /* Adds space below the paragraph */
+}
+
+.explore-button {
+  background-color: black; /* Black button */
+  color: white; /* White text on the button */
+  border: none; /* Removes border */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px; /* Button padding */
+  font-size: 1.2rem; /* Button text size */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: all 0.3s ease-in-out; /* Smooth transition effect */
+  margin: 0 10px; /* Adds 10px padding on both left and right */
+}
+
+.explore-button:hover {
+  background-color: rgb(128, 128, 128); /* Grey background on hover */
 }
